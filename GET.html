@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     #result{
+        width: 200px;
+        height: 100px;
+        border: solid 1px #903;
+    }
+</style>
+<body>
+    <div id="result">
+    </div>
+    <button onclick="a()">你好</button>
+    <script>
+        const result=document.getElementById("result")
+      function a(){
+         const xhr=new XMLHttpRequest();
+         xhr.responseType='json';
+         xhr.open('GET','http://api.nlecloud.com/users/login');
+         xhr.send();
+         xhr.onreadystatechange=function(){
+             if(xhr.readyState===4){
+                 if(xhr.status>=200&&xhr.status<300){
+                     result.innerHTML=xhr.response;
+                     console.log(xhr.response);
+                     result.innerHTML=xhr.response.name;
+                      b=xhr.response.sex;
+                   result.style.width=b+"px";
+                 }
+             }
+         }
+ 
+      }
+       
+    </script>
+</body>
+</html>
