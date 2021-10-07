@@ -1,0 +1,10 @@
+react 起反应
+
+es6 
+module 模块化；
+inport 输入端口；input差不多
+export 输出端口；xput
+
+模板：
+component 组件
+template：模板
